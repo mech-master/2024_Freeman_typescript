@@ -4,7 +4,7 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "noEmitOnError": true,
-    //"lib": ["es5", "dom", "es2015.collection"]
-    "module": "Node16"
+    "module": "Node16",
+    "sourceMap": true
   }
 }
