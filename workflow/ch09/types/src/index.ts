@@ -6,10 +6,20 @@ function writePrice(product:string, price:number):void {
     console.log(`Price for ${product}: $${price.toFixed(2)}`);
 }
 
-type tuple = [string, number];
+enum Product {Hat, Gloves, Umbrella};
 
-let hat:tuple = ["Hat", 100];
-let gloves:tuple = ["Gloves", 75];
+let products:[Product, number][] = [[Product.Hat, 100], [Product.Gloves, 75]];
 
-writePrice(hat[0], hat[1]);
-writePrice(gloves[0], gloves[1]);
+products.forEach((prod:[Product, number]) => {
+    switch (prod[0]) {
+        case Product.Hat:
+            writePrice("Hat", calculateTax(prod[1]));
+            break;
+        case Product.Gloves:
+            writePrice("Gloves", calculateTax(prod[1]));
+            break;
+        case Product.Umbrella:
+            writePrice("Umbrella", calculateTax(prod[1]));
+            break;
+    }
+});
