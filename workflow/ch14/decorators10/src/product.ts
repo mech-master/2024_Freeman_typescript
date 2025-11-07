@@ -1,15 +1,19 @@
 import { time } from "./methodDecorator.js";
 import { serialize } from "./classDecorator.js";
 import { double } from "./fieldDecorator.js";
-import { log } from "./accessorDecorator.js";
+import { log } from "./acceessorDecorator.js";
 import { autolog } from "./autoAccessorDecorator.js";
 
 @serialize
 export class Product {
+    // @double
+    // protected taxRate: number = 20;
+
     constructor(public name: string, public price: number) {}
 
     @time({
-        replacement: () => "Hello, Decorator"
+        replacement: () => "Hello, Decorator",
+        time: true
     })
     getDetails() {
         return `Product: ${this.name}, Price: ${this.getPrice()}`;
@@ -27,7 +31,7 @@ export class Product {
     // get tax() { return this.taxRate };
     //
     // @log
-    // set tax(newValue) { this.taxRate = newValue };
+    // set tax(newValue) { this.taxRate = newValue; };
 
     @autolog
     accessor tax: number = 20;

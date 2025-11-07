@@ -6,6 +6,9 @@ import { autolog } from "./autoAccessorDecorator.js";
 
 @serialize
 export class Product {
+    // @double
+    // protected taxRate: number = 20;
+
     constructor(public name: string, public price: number) {}
 
     @time({
@@ -27,7 +30,7 @@ export class Product {
     // get tax() { return this.taxRate };
     //
     // @log
-    // set tax(newValue) { this.taxRate = newValue };
+    // set tax(newValue) {this.taxRate = newValue};
 
     @autolog
     accessor tax: number = 20;

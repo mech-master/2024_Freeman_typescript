@@ -4,13 +4,13 @@ type Config = {
     replacement? : Function
 }
 
-export function time(config? : Config) {
-    return function (method, ctx: ClassMethodDecoratorContext) {
+export function time(config?: Config) {
+    return function(method, ctx: ClassMethodDecoratorContext) {
         const methodName = config?.label ?? String(ctx.name);
-        return function (this, ...args: any[]) {
+        return function(this, ...args: any[]) {
             const start = performance.now();
             if (config?.time) {
-                console.log(`${methodName} started`)
+                console.log(`${methodName} started`);
             }
             let result;
             if (config?.replacement) {
