@@ -1,8 +1,8 @@
 import { time } from "./methodDecorator.js";
 import { serialize } from "./classDecorator.js";
 import { double } from "./fieldDecorator.js";
-import { log } from "./acceessorDecorator.js";
-import { autolog } from "./autoAccessorDecorator.js";
+import { log } from "./accessorDecorator.js";
+import {autolog} from "./autoAccessorDecorator.js";
 
 @serialize
 export class Product {
@@ -28,10 +28,10 @@ export class Product {
     }
 
     // @log
-    // get tax() { return this.taxRate };
+    // get tax() { return this.taxRate};
     //
     // @log
-    // set tax(newValue) { this.taxRate = newValue; };
+    // set tax(newValue) {this.taxRate = newValue};
 
     @autolog
     accessor tax: number = 20;

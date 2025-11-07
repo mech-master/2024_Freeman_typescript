@@ -6,6 +6,8 @@ type Config = {
 
 export function time(config? : Config) {
     return function(method, ctx: ClassMethodDecoratorContext) {
+        let start;
+        ctx.addInitializer(() => start = performance.now());
         const methodName = config?.label ?? String(ctx.name);
         return function(this, ...args: any[]) {
             const start = performance.now();

@@ -1,14 +1,17 @@
 import { City } from "./city.js";
 import { Product } from "./product.js";
 import { isSerializeable } from "./classDecorator.js";
+import { writeTimes } from "./methodDecorator.js";
 
 let city = new City("London", 8982000);
 let product = new Product("Kayak", 275);
 
-//console.log(city.getSummary());
+console.log(city.getSummary());
 console.log(product.getDetails());
-console.log(product.getPrice());
+console.log(`Price: ${product.getPrice()}`);
 
-if (isSerializeable(product)) {
-    product.serialize();
-}
+writeTimes();
+
+// if (isSerializeable(product)) {
+//     product.serialize();
+// }
