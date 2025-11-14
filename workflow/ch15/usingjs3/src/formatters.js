@@ -1,0 +1,23 @@
+//@ts-nocheck
+
+export function sizeFormatter(thing, count) {
+    writeMessage(`The ${thing} count ${count} items`);
+}
+
+/**
+ * Format something that has a money value
+ * @param { string } thing - the name of the item
+ * @param { string | number }cost - the value associated with the item
+ */
+
+export function costFormatter(thing, cost) {
+    if (typeof cost === "number") {
+        writeMessage(`The ${thing} cost $${cost.toFixed(2)}`, true);
+    } else {
+        writeMessage(`The ${thing} cost $${cost}`);
+    }
+}
+
+export function writeMessage(message) {
+    console.log(message);
+}

@@ -1,0 +1,21 @@
+{
+  "name": "usingjs4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc-watch --onsuccess \"node ./dist/index.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/node": "^24.10.1",
+    "chalk": "^5.6.2",
+    "debug": "^4.4.3",
+    "tsc-watch": "^7.2.0",
+    "typescript": "^5.9.3"
+  }
+}

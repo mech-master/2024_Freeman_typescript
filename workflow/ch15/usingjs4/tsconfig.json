@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "module": "Node16",
+//    "allowJs": true,
+//    "checkJs": true
+  }
+}
